@@ -99,13 +99,19 @@ function createWindow() {
         y: state.y,
         minWidth: 650,
         minHeight: 600,
-        backgroundColor: '#0f172a',
-        frame: true,
+        backgroundColor: '#000000',
+        titleBarStyle: 'hidden',
+        titleBarOverlay: {
+            color: '#0f172a',
+            symbolColor: '#94a3b8',
+            height: 32
+        },
         autoHideMenuBar: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.cjs'),
             nodeIntegration: false,
             contextIsolation: true,
+            sandbox: false,
             webSecurity: true
         },
         icon: path.join(__dirname, '../build/icon.png'),

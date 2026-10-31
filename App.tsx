@@ -342,7 +342,9 @@ const AppContent: React.FC = () => {
     netTrafficSettings,
     setNetTrafficSettings,
     configActiveTab,
-    setConfigActiveTab
+    setConfigActiveTab,
+    isSettingsOpen,
+    setIsSettingsOpen
   }), [
     logRules,
     savedRequests,
@@ -360,7 +362,8 @@ const AppContent: React.FC = () => {
     toggleFocusMode,
     ambientMood,
     netTrafficSettings,
-    configActiveTab
+    configActiveTab,
+    isSettingsOpen
   ]);
 
   const handleBackendLoadingComplete = () => {

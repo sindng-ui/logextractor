@@ -44,6 +44,10 @@ export interface HappyToolContextType {
     configActiveTab: 'settings' | 'commands';
     setConfigActiveTab: React.Dispatch<React.SetStateAction<'settings' | 'commands'>>;
 
+    // Global Settings Modal
+    isSettingsOpen: boolean;
+    setIsSettingsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
     // Reactive Ambient Mood
     ambientMood: 'idle' | 'working' | 'error' | 'success';
     setAmbientMood: React.Dispatch<React.SetStateAction<'idle' | 'working' | 'error' | 'success'>>;

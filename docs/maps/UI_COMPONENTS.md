@@ -13,6 +13,7 @@
 | :--- | :--- | :--- |
 | `LogExtractor` | `components/LogExtractor.tsx` | Multi-tab session manager, drag-and-drop tab sorting (`@dnd-kit`), and split-view orchestrator. |
 | `LogSession` | `components/LogSession.tsx` | Individual log tab session controller binding workers, toolbar, configuration panel, and canvas viewer. |
+| `TopBar` | `components/LogViewer/TopBar.tsx` | Toolbar hosting Settings button on the left, Mission/Rules, Tizen Connection, Analysis panels, and Single/Split layout switcher. |
 | `LogViewer/*` | `components/LogViewer/**` | 52 specialized components/hooks including `HyperLogRenderer.tsx`, `LogViewerPane.tsx`, `ConfigurationPanel.tsx`, `ConfigSections/*`, `PerfDashboard/*`, `SplitAnalyzerPanel.tsx`, `SpamAnalyzerPanel.tsx`, `TransactionDrawer.tsx`. |
 | `LogArchive/*` | `components/LogArchive/**` | 20 components/hooks/workers for IndexedDB (`Dexie`) log snippet archiving, tagging, search, and statistics. |
 | `TizenConnectionModal` | `components/TizenConnectionModal.tsx` | Live stream connection modal for SDB, SSH, Serial port, and Test Scroll simulator. |

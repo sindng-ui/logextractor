@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Lucide from 'lucide-react';
 import { useLogContext } from './LogContext';
 import { useToast } from '../../contexts/ToastContext';
+import { useHappyTool } from '../../contexts/HappyToolContext';
 import MissionManagerModal from './MissionManagerModal';
 import LogQuickTagsPopover from './LogQuickTagsPopover';
 import { Settings2, ListOrdered } from 'lucide-react';
@@ -20,6 +21,7 @@ const TopBar: React.FC<{
     isSplitAnalyzerOpen?: boolean;
 }> = ({ onReturnFocus, onSplitAnalyze, isSplitAnalyzing, isSplitAnalyzerOpen }) => {
     const { addToast } = useToast();
+    const { setIsSettingsOpen } = useHappyTool();
     const {
         rules, selectedRuleId, setSelectedRuleId,
         handleCreateRule, handleDeleteRule, onExportSettings,
@@ -109,10 +111,18 @@ const TopBar: React.FC<{
     };
 
     return (
-        <div className=" border-b p-4 pl-16 pr-[200px] flex items-center justify-between shrink-0 h-16 z-50 title-drag relative" style={{ backgroundColor: '#0f172a', borderBottomColor: 'rgba(99, 102, 241, 0.3)' }}>
-            {/* Left Section: Mission & Rules */}
-            <div className="flex items-center gap-6 no-drag">
-                <div className="flex items-center space-x-4">
+        <div className=" border-b p-4 pl-3 pr-[140px] flex items-center justify-between shrink-0 h-16 z-50 title-drag relative" style={{ backgroundColor: '#0f172a', borderBottomColor: 'rgba(99, 102, 241, 0.3)' }}>
+            {/* Left Section: Settings & Mission & Rules */}
+            <div className="flex items-center gap-4 no-drag">
+                <button
+                    onClick={() => setIsSettingsOpen(true)}
+                    className="w-10 h-10 flex items-center justify-center bg-slate-800/90 hover:bg-slate-700 border border-white/10 rounded-xl shadow-lg text-slate-400 hover:text-white transition-all duration-300 active:scale-95 group"
+                    style={{ WebkitAppRegion: 'no-drag' } as any}
+                    title="Settings (Ctrl+,)"
+                >
+                    <Lucide.Settings size={18} className="group-hover:rotate-90 transition-transform duration-500" />
+                </button>
+            <div className="flex items-center space-x-4">
                     <div className="p-2 bg-indigo-500/10 rounded-lg border border-indigo-500/20"><Sparkles size={18} className="text-indigo-400" /></div>
                     <select className="border-none bg-transparent font-bold text-slate-200 text-lg focus:outline-none cursor-pointer hover:text-indigo-400 transition-colors [&>option]:bg-slate-900 w-64 truncate" value={selectedRuleId || ''} onChange={(e) => onSelectRule(e.target.value)}>
                         {rules.map(r => <option key={r.id} value={r.id}>{r.name}</option>)}
