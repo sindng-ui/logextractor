@@ -489,10 +489,8 @@ const AppContent: React.FC = () => {
       <div className={`flex flex-col h-screen w-screen overflow-hidden bg-[#0B0F19] font-sans text-slate-900 dark:text-slate-200 transition-colors duration-300 relative ${isFocusMode ? 'focus-mode' : ''}`}>
         <div className="flex-1 flex overflow-hidden z-10 relative">
           <main className="flex-1 w-full overflow-hidden relative bg-slate-50 dark:bg-slate-950 min-h-0 transition-colors duration-300">
-            <TopRightActions
-              onOpenSettings={() => setIsSettingsOpen(true)}
-              isFocusMode={isFocusMode}
-            />
+            {/* TopRightActions moved to TopBar */}
+            {/* TopRightActions removed from here */}
             {!isSettingsLoaded ? (
               <div className="flex h-full items-center justify-center text-slate-500">Loading settings...</div>
             ) : (
