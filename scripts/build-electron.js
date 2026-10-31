@@ -4,7 +4,7 @@ const os = require('os');
 const path = require('path');
 
 const tempOutDir = path.join(os.tmpdir(), 'electron-build-out').replace(/\\/g, '/');
-const localDistBin = path.join(__dirname, 'dist_bin').replace(/\\/g, '/');
+const localDistBin = path.join(__dirname, '..', 'dist_bin').replace(/\\/g, '/');
 
 console.log('=== [1/3] Building frontend assets (Vite)... ===');
 cp.execSync('node ./node_modules/vite/bin/vite.js build', { stdio: 'inherit' });

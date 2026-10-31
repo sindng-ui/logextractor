@@ -359,6 +359,12 @@
 - **Location**: [scripts/cleanup_build.cjs](./scripts/cleanup_build.cjs)
 - **Fix**: 빌드 전 프로세스 강제 종료 및 잔여 파일 정리로 빌드 안정성 확보.
 
+### [[Electron Build Packaging Script]] 📦 [UPDATED]
+- **ID**: `tool-electron-build`
+- **Keywords**: [`electron-builder`, `build-electron`, `dist_bin`, `output path`]
+- **Location**: [scripts/build-electron.js](./scripts/build-electron.js)
+- **Fix**: 빌드 산출물(설치 파일 `.exe`, `latest.yml` 등) 복사 대상 경로를 `scripts/dist_bin`이 아닌 프로젝트 루트의 `dist_bin`으로 정상 지정.
+
 ---
 
 ## 5. Maintenance & Policy
