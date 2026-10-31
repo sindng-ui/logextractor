@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist_electron/
+*.log
+.DS_Store
+npm-debug.log*
+.env
+src-wasm/target/
+
+out_electron/
+
+dist_bin/
